@@ -1,10 +1,7 @@
 const flowerBed = document.getElementById('flowerBed');
 const messageCard = document.getElementById('messageCard');
 const scrollNudge = document.getElementById('scrollNudge');
-const comfortToast = document.getElementById('comfortToast');
-const toastMessage = document.getElementById('toastMessage');
 let nudgeTimer;
-let toastTimer;
 
 // A small orientation cue: it introduces the rest of the gift, then disappears on its own.
 function showScrollNudge() {
@@ -16,19 +13,6 @@ function showScrollNudge() {
     scrollNudge.classList.remove('is-visible');
     scrollNudge.setAttribute('aria-hidden', 'true');
   }, 2000);
-}
-
-function showComfortToast(message) {
-  clearTimeout(toastTimer);
-  toastMessage.textContent = message;
-  comfortToast.classList.add('is-visible');
-  comfortToast.setAttribute('aria-hidden', 'false');
-  toastTimer = setTimeout(hideComfortToast, 4800);
-}
-
-function hideComfortToast() {
-  comfortToast.classList.remove('is-visible');
-  comfortToast.setAttribute('aria-hidden', 'true');
 }
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -67,6 +51,9 @@ document.getElementById('bloomButton').addEventListener('click', () => {
 
 document.querySelectorAll('.comfort-card').forEach((card) => {
   card.addEventListener('click', () => {
+    clearTimeout(card.flipTimer);
+    card.classList.add('is-flipped');
+    card.flipTimer = setTimeout(() => card.classList.remove('is-flipped'), 2000);
     messageCard.style.opacity = '0';
     messageCard.style.transform = 'translateY(8px)';
     setTimeout(() => {
@@ -74,12 +61,8 @@ document.querySelectorAll('.comfort-card').forEach((card) => {
       messageCard.style.opacity = '1';
       messageCard.style.transform = 'translateY(0)';
     }, 180);
-    showComfortToast(card.dataset.message);
-    petals(8);
   });
 });
-
-document.getElementById('toastClose').addEventListener('click', hideComfortToast);
 
 document.getElementById('confettiButton').addEventListener('click', () => petals(55));
 
