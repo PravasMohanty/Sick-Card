@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A Little Garden For You</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="garden">
+      <div class="sun"></div>
+      <div class="cloud cloud-one"></div><div class="cloud cloud-two"></div>
+      <div class="sparkles" aria-hidden="true"></div>
+      <div class="petals" aria-hidden="true"></div>
+      <aside class="scroll-nudge" id="scrollNudge" aria-live="polite" aria-hidden="true">
+        <span>✿</span> a little note is waiting below <b>↓</b>
+      </aside>
+
+      <section class="hero" aria-labelledby="hero-title">
+        <p class="eyebrow">a tiny corner of sunshine, just for you</p>
+        <h1 id="hero-title">Hey, lovely.<br /><em>Feel better soon.</em></h1>
+        <p class="intro">I heard the week has been loud and your body is asking for a little extra gentleness. So I made you a garden that asks for absolutely nothing except a small smile.</p>
+        <button class="primary-button" id="bloomButton">
+          <span class="button-flower">✿</span> Tap for your flowers
+        </button>
+        <p class="button-note">psst… they bloom when you tap</p>
+        <a class="discover-link" href="#comfort-title">a few tiny things are waiting below <span>↓</span></a>
+      </section>
+
+      <section class="flower-bed" id="flowerBed" aria-label="A bouquet of virtual flowers">
+        <div class="stem stem-1"><div class="flower daisy"><i></i><i></i><i></i><i></i><i></i><b></b></div></div>
+        <div class="stem stem-2"><div class="flower tulip"><i></i><i></i><i></i></div></div>
+        <div class="stem stem-3"><div class="flower poppy"><i></i><i></i><i></i><i></i><b></b></div></div>
+        <div class="stem stem-4"><div class="flower daisy pink"><i></i><i></i><i></i><i></i><i></i><b></b></div></div>
+        <div class="stem stem-5"><div class="flower tulip peach"><i></i><i></i><i></i></div></div>
+        <div class="leaf leaf-one"></div><div class="leaf leaf-two"></div><div class="leaf leaf-three"></div>
+      </section>
+
+      <section class="note-card" aria-label="A cheerful note">
+        <div class="card-sticker">♡</div>
+        <p class="card-label">your official prescription</p>
+        <h2>Rest. Sip something warm.<br />Be <em>very</em> kind to yourself.</h2>
+        <p>There is no prize for powering through. Your only job right now is to get cosy and let the world wait a minute.</p>
+        <div class="tiny-hearts"><span>♥</span><span>♥</span><span>♥</span></div>
+      </section>
+
+      <section class="comfort-section" aria-labelledby="comfort-title">
+        <div class="section-heading"><p class="eyebrow">for the grumpy days</p><h2 id="comfort-title">A few small things for you</h2></div>
+        <div class="comfort-grid">
+          <button class="comfort-card lavender" data-message="Today, being a little sleepy and a little dramatic is completely allowed. You’re still lovely.">
+            <span class="card-icon">☁</span><strong>Permission slip</strong><small>tap for a reminder</small>
+          </button>
+          <button class="comfort-card butter" data-message="A warm drink, your softest blanket, and absolutely zero guilt. That is the plan.">
+            <span class="card-icon">☕</span><strong>Cosy mode</strong><small>tap for a tiny plan</small>
+          </button>
+          <button class="comfort-card blush" data-message="Sending you a pocket-sized hug. It is squishy, warm, and has no expiry date.">
+            <span class="card-icon">♡</span><strong>A pocket hug</strong><small>tap to unwrap</small>
+          </button>
+        </div>
+      </section>
+
+      <section class="message-wrap">
+        <div class="message-card" id="messageCard" aria-live="polite">
+          <span class="message-flower">✽</span>
+          <p>Pick a little card above whenever you need a soft reminder.</p>
+        </div>
+      </section>
+
+      <section class="finale">
+        <p class="eyebrow">one last thing</p>
+        <h2>You matter more than<br /><em>you probably realise.</em></h2>
+        <p>Even on the grumpy days. Get well soon, flower.</p>
+        <button id="confettiButton" class="text-button">make it rain petals ✿</button>
+      </section>
+      <footer>made with good intentions and a suspicious amount of flowers</footer>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
